@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FinalProject.Models.Entity.Cliente>
+
+@{
+    ViewData["Title"] = "Cliente Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Novo*</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome_cli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contato_cli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.contato_cli2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataCad_cli)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome_cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contato_cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contato_cli2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataCad_cli)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_cli">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_cli">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_cli">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

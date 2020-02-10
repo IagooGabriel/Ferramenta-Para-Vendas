@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FinalProject.Models.Entity.Venda>
+
+@{
+    ViewData["Title"] = "Vendas";
+}
+
+<h1>Vendas</h1>
+
+<p>
+    <a asp-action="Create">Novo*</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.clientes.nome_cli)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.servicos.nome_serv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendedores.nome_vend)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dataVenda)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientes.nome_cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicos.nome_serv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendedores.nome_vend)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataVenda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_venda">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_venda">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_venda">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

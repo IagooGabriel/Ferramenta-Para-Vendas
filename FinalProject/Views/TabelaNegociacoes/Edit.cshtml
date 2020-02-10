@@ -1,0 +1,47 @@
+﻿@model FinalProject.Models.View.TabelaNgociacoesViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TabelaNegociacao</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id_neg" />
+
+            <div class="form-group">
+                <label asp-for="ServicoId" class="control-label">Serviços: </label>
+                <select asp-for="ServicoId" asp-items="@ViewBag.ListaServico"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendedorId" class="control-label">Vendedor: </label>
+                <select asp-for="VendedorId" asp-items="@ViewBag.ListaVendedor"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="min_porcent" class="control-label"></label>
+                <input asp-for="min_porcent" class="form-control" />
+                <span asp-validation-for="min_porcent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="max_porcent" class="control-label"></label>
+                <input asp-for="max_porcent" class="form-control" />
+                <span asp-validation-for="max_porcent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

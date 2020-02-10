@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FinalProject.Models.Entity.TabelaNegociacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.servicos.nome_serv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vendedores.nome_vend)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.min_porcent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.max_porcent)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.servicos.nome_serv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vendedores.nome_vend)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.min_porcent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.max_porcent)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_neg">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_neg">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_neg">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

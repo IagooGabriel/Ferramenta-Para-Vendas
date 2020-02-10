@@ -1,0 +1,36 @@
+﻿@model FinalProject.Models.Entity.ServicoHistorico
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>ServicoHistorico</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.servicos.nome_serv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.servicos.nome_serv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.oqfoialterado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.oqfoialterado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.dtAlteracao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.dtAlteracao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id_servHist">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

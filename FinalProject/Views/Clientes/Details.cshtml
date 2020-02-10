@@ -1,0 +1,42 @@
+﻿@model FinalProject.Models.Entity.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nome_cli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nome_cli)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contato_cli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contato_cli)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contato_cli2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contato_cli2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dataCad_cli)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dataCad_cli)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id_cli">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

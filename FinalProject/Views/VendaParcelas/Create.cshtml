@@ -1,0 +1,48 @@
+﻿@model FinalProject.Models.Entity.VendaParcela
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>VendaParcela</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="parcelas" class="control-label"></label>
+                <input asp-for="parcelas" class="form-control" />
+                <span asp-validation-for="parcelas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dt_vencimento" class="control-label"></label>
+                <input asp-for="dt_vencimento" class="form-control" />
+                <span asp-validation-for="dt_vencimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dt_pagamento" class="control-label"></label>
+                <input asp-for="dt_pagamento" class="form-control" />
+                <span asp-validation-for="dt_pagamento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="valor" class="control-label"></label>
+                <input asp-for="valor" class="form-control" />
+                <span asp-validation-for="valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

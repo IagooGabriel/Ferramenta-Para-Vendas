@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FinalProject.Models.Entity.Servico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome_serv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor_serv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome_serv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor_serv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_serv">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id_serv">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_serv">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

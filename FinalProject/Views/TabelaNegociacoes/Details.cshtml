@@ -1,0 +1,46 @@
+﻿@model FinalProject.Models.Entity.TabelaNegociacao
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TabelaNegociacao</h4>
+    <hr />
+    <dl class="row">
+        <!--Para nome do serviço-->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.servicos.nome_serv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.servicos.nome_serv)
+        </dd>
+        <!--Para nome do Vendedor-->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.vendedores.nome_vend)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.vendedores.nome_vend)
+        </dd>
+        <!--Para valor minimo-->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.min_porcent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.min_porcent)
+        </dd>
+        <!--Para valor maximo-->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.max_porcent)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.max_porcent)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id_neg">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
